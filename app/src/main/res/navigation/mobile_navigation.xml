@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_contact_list">
+
+    <fragment
+        android:id="@+id/navigation_favorites"
+        android:name="com.codev.recruitment.archielogarta.ui.favorites.FavoriteFragment"
+        android:label="@string/title_favorites"
+        tools:layout="@layout/fragment_contact_list" >
+
+        <action
+            android:id="@+id/action_navigation_favorites_to_viewContactFragment"
+            app:destination="@id/viewContactFragment" />
+        <action
+            android:id="@+id/action_navigation_favorites_to_contactDetailFragment"
+            app:destination="@id/contactDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_contact_list"
+        android:name="com.codev.recruitment.archielogarta.ui.contactlist.ContactListFragment"
+        android:label="@string/title_contact_list"
+        tools:layout="@layout/fragment_contact_list">
+        <action
+            android:id="@+id/action_navigation_contact_list_to_contactDetailFragment"
+            app:destination="@id/contactDetailFragment">
+        </action>
+
+        <action
+            android:id="@+id/action_navigation_contact_list_to_viewContactFragment"
+            app:destination="@id/viewContactFragment">
+        </action>
+
+    </fragment>
+    <fragment
+        android:id="@+id/contactDetailFragment"
+        android:name="com.codev.recruitment.archielogarta.ui.contactdetail.ContactDetailFragment"
+        android:label="Contact Detail"
+        tools:layout="@layout/fragment_contact_detail">
+        <action
+            android:id="@+id/action_contactDetailFragment_to_navigation_contact_list"
+            app:destination="@id/navigation_contact_list" />
+        <argument
+            android:name="contactId"
+            android:defaultValue=""
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/viewContactFragment"
+        android:name="com.codev.recruitment.archielogarta.ui.contactdetail.ViewContactFragment"
+        android:label="ViewContactFragment">
+        <action
+            android:id="@+id/action_viewContactFragment_to_contactDetailFragment"
+            app:destination="@id/contactDetailFragment">
+        </action>
+        <argument
+            android:name="contactId"
+            android:defaultValue=""
+            app:argType="string" />
+        <action
+            android:id="@+id/action_viewContactFragment_to_navigation_contact_list"
+            app:destination="@id/navigation_contact_list" />
+    </fragment>
+</navigation>
