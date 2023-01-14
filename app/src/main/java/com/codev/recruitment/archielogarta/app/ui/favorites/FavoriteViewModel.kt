@@ -1,4 +1,4 @@
-package com.codev.recruitment.archielogarta.ui.favorites
+package com.codev.recruitment.archielogarta.app.ui.favorites
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

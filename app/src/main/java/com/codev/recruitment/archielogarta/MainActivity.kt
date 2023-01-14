@@ -8,12 +8,12 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.codev.recruitment.archielogarta.databinding.ActivityMainBinding
-import com.codev.recruitment.archielogarta.enum.FabActionType
-import com.codev.recruitment.archielogarta.impl.FabListener
+import com.codev.recruitment.archielogarta.app.enum.FabActionType
+import com.codev.recruitment.archielogarta.app.impl.FabListener
 import com.codev.recruitment.archielogarta.repository.entity.Contact
-import com.codev.recruitment.archielogarta.ui.contactdetail.ViewContactFragmentDirections
-import com.codev.recruitment.archielogarta.ui.contactlist.ContactListFragmentDirections
-import com.codev.recruitment.archielogarta.ui.favorites.FavoriteFragmentDirections
+import com.codev.recruitment.archielogarta.app.ui.contactdetail.ViewContactFragmentDirections
+import com.codev.recruitment.archielogarta.app.ui.contactlist.ContactListFragmentDirections
+import com.codev.recruitment.archielogarta.app.ui.favorites.FavoriteFragmentDirections
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 

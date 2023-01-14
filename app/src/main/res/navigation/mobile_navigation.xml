@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_favorites"
-        android:name="com.codev.recruitment.archielogarta.ui.favorites.FavoriteFragment"
+        android:name="com.codev.recruitment.archielogarta.app.ui.favorites.FavoriteFragment"
         android:label="@string/title_favorites"
         tools:layout="@layout/fragment_contact_list" >
 
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/navigation_contact_list"
-        android:name="com.codev.recruitment.archielogarta.ui.contactlist.ContactListFragment"
+        android:name="com.codev.recruitment.archielogarta.app.ui.contactlist.ContactListFragment"
         android:label="@string/title_contact_list"
         tools:layout="@layout/fragment_contact_list">
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/contactDetailFragment"
-        android:name="com.codev.recruitment.archielogarta.ui.contactdetail.ContactDetailFragment"
+        android:name="com.codev.recruitment.archielogarta.app.ui.contactdetail.ContactDetailFragment"
         android:label="Contact Detail"
         tools:layout="@layout/fragment_contact_detail">
         <action
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/viewContactFragment"
-        android:name="com.codev.recruitment.archielogarta.ui.contactdetail.ViewContactFragment"
+        android:name="com.codev.recruitment.archielogarta.app.ui.contactdetail.ViewContactFragment"
         android:label="ViewContactFragment">
         <action
             android:id="@+id/action_viewContactFragment_to_contactDetailFragment"

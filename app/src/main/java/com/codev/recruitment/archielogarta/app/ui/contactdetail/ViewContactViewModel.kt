@@ -1,4 +1,4 @@
-package com.codev.recruitment.archielogarta.ui.contactdetail
+package com.codev.recruitment.archielogarta.app.ui.contactdetail
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

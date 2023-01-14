@@ -1,4 +1,4 @@
-package com.codev.recruitment.archielogarta.ui.contactlist
+package com.codev.recruitment.archielogarta.app.ui.contactlist
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

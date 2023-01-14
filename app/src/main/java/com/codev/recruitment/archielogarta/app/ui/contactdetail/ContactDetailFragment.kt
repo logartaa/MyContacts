@@ -1,4 +1,4 @@
-package com.codev.recruitment.archielogarta.ui.contactdetail
+package com.codev.recruitment.archielogarta.app.ui.contactdetail
 
 import android.content.Context
 import android.os.Bundle
@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.codev.recruitment.archielogarta.R
 import com.codev.recruitment.archielogarta.databinding.FragmentContactDetailBinding
-import com.codev.recruitment.archielogarta.enum.FabActionType
-import com.codev.recruitment.archielogarta.impl.FabListener
+import com.codev.recruitment.archielogarta.app.enum.FabActionType
+import com.codev.recruitment.archielogarta.app.impl.FabListener
 import com.codev.recruitment.archielogarta.repository.entity.Contact
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.CoroutineScope

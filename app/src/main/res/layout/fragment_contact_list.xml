@@ -14,7 +14,7 @@
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
         android:visibility="visible"
-        tools:context=".ui.contactlist.ContactListFragment"
+        tools:context=".app.ui.contactlist.ContactListFragment"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"

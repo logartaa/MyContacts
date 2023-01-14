@@ -1,8 +1,7 @@
-package com.codev.recruitment.archielogarta.ui.contactdetail
+package com.codev.recruitment.archielogarta.app.ui.contactdetail
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.core.view.MenuProvider
@@ -11,13 +10,10 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.navArgs
 import com.codev.recruitment.archielogarta.R
 import com.codev.recruitment.archielogarta.databinding.FragmentViewContactBinding
-import com.codev.recruitment.archielogarta.enum.FabActionType
-import com.codev.recruitment.archielogarta.impl.FabListener
+import com.codev.recruitment.archielogarta.app.enum.FabActionType
+import com.codev.recruitment.archielogarta.app.impl.FabListener
 import com.codev.recruitment.archielogarta.repository.entity.Contact
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ViewContactFragment : Fragment() {

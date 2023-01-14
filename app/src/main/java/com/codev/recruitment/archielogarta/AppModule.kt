@@ -4,10 +4,10 @@ import android.app.Application
 import androidx.room.Room
 import com.codev.recruitment.archielogarta.repository.dao.ContactDao
 import com.codev.recruitment.archielogarta.repository.database.ContactDatabase
-import com.codev.recruitment.archielogarta.ui.contactdetail.ContactDetailViewModel
-import com.codev.recruitment.archielogarta.ui.contactdetail.ViewContactViewModel
-import com.codev.recruitment.archielogarta.ui.contactlist.ContactListViewModel
-import com.codev.recruitment.archielogarta.ui.favorites.FavoriteViewModel
+import com.codev.recruitment.archielogarta.app.ui.contactdetail.ContactDetailViewModel
+import com.codev.recruitment.archielogarta.app.ui.contactdetail.ViewContactViewModel
+import com.codev.recruitment.archielogarta.app.ui.contactlist.ContactListViewModel
+import com.codev.recruitment.archielogarta.app.ui.favorites.FavoriteViewModel
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module

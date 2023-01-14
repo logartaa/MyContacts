@@ -1,6 +1,6 @@
-package com.codev.recruitment.archielogarta.impl
+package com.codev.recruitment.archielogarta.app.impl
 
-import com.codev.recruitment.archielogarta.enum.FabActionType
+import com.codev.recruitment.archielogarta.app.enum.FabActionType
 import com.codev.recruitment.archielogarta.repository.entity.Contact
 
 interface FabListener {

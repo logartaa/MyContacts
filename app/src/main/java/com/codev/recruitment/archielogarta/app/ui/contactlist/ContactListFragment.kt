@@ -1,4 +1,4 @@
-package com.codev.recruitment.archielogarta.ui.favorites
+package com.codev.recruitment.archielogarta.app.ui.contactlist
 
 import android.content.Context
 import android.os.Bundle
@@ -7,28 +7,31 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.codev.recruitment.archielogarta.R
 import com.codev.recruitment.archielogarta.databinding.FragmentContactListBinding
-import com.codev.recruitment.archielogarta.enum.FabActionType
-import com.codev.recruitment.archielogarta.impl.FabListener
+import com.codev.recruitment.archielogarta.app.enum.FabActionType
+import com.codev.recruitment.archielogarta.app.impl.FabListener
 import com.codev.recruitment.archielogarta.repository.entity.Contact
-import com.codev.recruitment.archielogarta.ui.contactlist.ContactRecyclerViewAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class FavoriteFragment : Fragment(), ContactRecyclerViewAdapter.ContactListener{
+/**
+ * A fragment representing a list of Items.
+ */
+class ContactListFragment : Fragment(), ContactRecyclerViewAdapter.ContactListener {
 
     private var fabListener: FabListener? = null
     private lateinit var binding: FragmentContactListBinding
-    private val favoriteListViewModel: FavoriteViewModel by viewModel()
+    private val contListViewModel: ContactListViewModel by viewModel()
     private lateinit var adapter: ContactRecyclerViewAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         binding = FragmentContactListBinding.bind(
             inflater.inflate(
                 R.layout.fragment_contact_list,
@@ -42,9 +45,10 @@ class FavoriteFragment : Fragment(), ContactRecyclerViewAdapter.ContactListener{
             layoutManager = LinearLayoutManager(context)
         }
         adapter = ContactRecyclerViewAdapter(
-            this@FavoriteFragment
+            this@ContactListFragment
         )
         binding.list.adapter = adapter
+        binding.list.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
 
         return binding.root
     }
@@ -56,7 +60,7 @@ class FavoriteFragment : Fragment(), ContactRecyclerViewAdapter.ContactListener{
             fabListener?.onFabAction(FabActionType.CREATE_CONTACT_CONTACTLIST)
         }
 
-        favoriteListViewModel.getFavoriteContactsObserver()
+        contListViewModel.getAllContactsObserver()
             .observe(viewLifecycleOwner) {
                 if(it.isEmpty()){
                     binding.list.visibility = View.GONE
@@ -67,7 +71,7 @@ class FavoriteFragment : Fragment(), ContactRecyclerViewAdapter.ContactListener{
                 }
                 adapter.setContactList(it)
             }
-        favoriteListViewModel.callFavoriteContactsDao()
+        contListViewModel.callContactListDao()
     }
 
     override fun onAttach(context: Context) {
@@ -76,7 +80,7 @@ class FavoriteFragment : Fragment(), ContactRecyclerViewAdapter.ContactListener{
     }
 
     override fun onViewContact(contact: Contact) {
-        val direction = FavoriteFragmentDirections.actionNavigationFavoritesToViewContactFragment(contact.cid.toString())
+        val direction = ContactListFragmentDirections.actionNavigationContactListToViewContactFragment(contact.cid.toString())
         findNavController().navigate(direction)
     }
 
@@ -87,4 +91,5 @@ class FavoriteFragment : Fragment(), ContactRecyclerViewAdapter.ContactListener{
     override fun onDeleteContact(contact: Contact) {
         TODO("Not yet implemented")
     }
+
 }
